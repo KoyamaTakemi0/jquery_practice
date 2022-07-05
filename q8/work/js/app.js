@@ -12,7 +12,10 @@ $(function(){
   }
 
   function displayResult(e){
-    
+    $.each(e[0].items, function(h, i){
+      let info = '<class li="lists-item"><p>タイトル：' + i.title + '</p><p>著者：' + i["dc:creator"] + '</p></li>';
+      $(".lists").prepend(info);
+    });
   }
 
   $(".search-btn").on('click', function(){
